@@ -1,0 +1,1 @@
+Not sure how to write a readme yet, but the basic gist of the project is replicate the features of MyAnimeList.com but in a more minimal style and with a few additional features (eventually). Really this is an attempt to recreate the same project several times but in several different scales. My long term goal for this project is write it for web, mobile, and then as an app.
