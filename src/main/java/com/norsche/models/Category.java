@@ -1,4 +1,4 @@
-package org.launchcode.models;
+package com.norsche.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -19,7 +19,7 @@ public class Category {
 
     @OneToMany
     @JoinColumn(name = "category_id")
-    private List<Cheese> cheeses = new ArrayList<>();
+    private List<Anime> animes = new ArrayList<>();
 
     public int getId(){
         return id;

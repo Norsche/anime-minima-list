@@ -1,12 +1,12 @@
-package org.launchcode;
+package com.norsche;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CheeseMvcApplication {
+public class AnimeMinimaListApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CheeseMvcApplication.class, args);
+		SpringApplication.run(AnimeMinimaListApplication.class, args);
 	}
 }

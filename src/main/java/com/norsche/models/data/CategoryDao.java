@@ -1,7 +1,6 @@
-package org.launchcode.models.data;
+package com.norsche.models.data;
 
-import org.launchcode.models.Cheese;
-import org.launchcode.models.Menu;
+import com.norsche.models.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,5 +8,5 @@ import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public interface MenuDao extends CrudRepository<Menu, Integer> {
+public interface CategoryDao extends CrudRepository<Category, Integer> {
 }

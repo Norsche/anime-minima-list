@@ -1,4 +1,4 @@
-package org.launchcode.models;
+package com.norsche.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,7 +9,7 @@ import java.util.List;
  * Created by LaunchCode
  */
 @Entity
-public class Cheese {
+public class Anime {
 
     @Id
     @GeneratedValue
@@ -29,12 +29,12 @@ public class Cheese {
     @ManyToMany
     private List<Menu> menus;
 
-    public Cheese(String name, String description) {
+    public Anime(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Cheese() { }
+    public Anime() { }
 
     public int getId() {
         return id;

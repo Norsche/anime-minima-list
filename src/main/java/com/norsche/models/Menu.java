@@ -1,4 +1,4 @@
-package org.launchcode.models;
+package com.norsche.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +20,7 @@ public class Menu {
     private String name;
 
     @ManyToMany
-    private List<Cheese> cheeses;
+    private List<Anime> anime;
 
     public Menu(){  }
 
@@ -44,11 +44,11 @@ public class Menu {
         this.id = id;
     }
 
-    public List<Cheese> getCheeses() {
-        return cheeses;
+    public List<Anime> getAnime() {
+        return anime;
     }
 
-    public void addItem(Cheese item){
-        cheeses.add(item);
+    public void addItem(Anime item){
+        anime.add(item);
     }
 }

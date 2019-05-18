@@ -10,11 +10,11 @@
 
         <form method="post" th:object="${form}">
             <div class="form-group">
-                <label th:for="cheeseId">Cheese</label>
-                <select th:field="*{cheeseId}">
-                    <option th:each="cheese : ${form.cheeses}"
-                            th:value="${cheese.id}"
-                            th:text="${cheese.name}"></option>
+                <label th:for="animeId">Cheese</label>
+                <select th:field="*{animeId}">
+                    <option th:each="anime : ${form.animes}"
+                            th:value="${anime.id}"
+                            th:text="${anime.name}"></option>
                 </select>
             </div>
 

@@ -1,10 +1,10 @@
-package org.launchcode.controllers;
+package com.norsche.controllers;
 
-import org.launchcode.models.Cheese;
-import org.launchcode.models.Menu;
-import org.launchcode.models.data.CheeseDao;
-import org.launchcode.models.data.MenuDao;
-import org.launchcode.models.forms.AddMenuItemForm;
+import com.norsche.models.Anime;
+import com.norsche.models.data.MenuDao;
+import com.norsche.models.forms.AddMenuItemForm;
+import com.norsche.models.Menu;
+import com.norsche.models.data.AnimeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.jws.WebParam;
 import javax.validation.Valid;
 
 @Controller
@@ -25,7 +24,7 @@ public class MenuController {
     private MenuDao menuDao;
 
     @Autowired
-    private CheeseDao cheeseDao;
+    private AnimeDao animeDao;
 
     @RequestMapping(value = "")
     public String index(Model model) {
@@ -71,7 +70,7 @@ public class MenuController {
 
         Menu menu = menuDao.findOne(menuId);
 
-        AddMenuItemForm itemForm = new AddMenuItemForm(menu, cheeseDao.findAll());
+        AddMenuItemForm itemForm = new AddMenuItemForm(menu, animeDao.findAll());
 
         model.addAttribute("title", "Add item to menu: " + menu.getName());
         model.addAttribute("form", itemForm);
@@ -89,9 +88,9 @@ public class MenuController {
         }
 
         Menu menu = menuDao.findOne(itemForm.getMenuId());
-        Cheese cheese = cheeseDao.findOne(itemForm.getCheeseId());
+        Anime anime = animeDao.findOne(itemForm.getAnimeId());
 
-        menu.addItem(cheese);
+        menu.addItem(anime);
         menuDao.save(menu);
 
         return "redirect:../view/" + menu.getId();
